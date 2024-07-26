@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wallet</title>
+  <link rel="stylesheet" href="{% static 'customer.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+    <img src="{% static 'logo.png' %}" class="logo" alt="Logo">
+    <div class="navbar-buttons">
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="customer">Wallet</a></button>
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="customer/rewards">Rewards</a></button>
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="customer/store">Store</a></button>
+    </div>
+  </nav>
+  <div class="content">
+    <h1 class="heading">Total Earnings: {{ name }}</h1>
+    <p><span id="supercoins" class="supercoins-animation">{{ balance }} Supercoins</span> earned last week</p>
+    <div id="totalRewards" class="total-rewards"></div>
+  </div>
+  <div class="transaction-container">
+    <div class="transaction-history">
+      <h3>Transaction History:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Sender</th>
+            <th>Recipient</th>
+            <th>Date and Time</th>
+            <th>Supercoins</th>
+          </tr>
+        </thead>
+        {% for txn in txns%}
+        <tbody>
+          <tr>
+            <td>{{ txn.sender.email }}</td>
+            <td>{{ txn.recipient }}</td>
+            <td>{{ txn.date_time }}</td>
+            <td>{{ txn.amount }}</td>
+          </tr>
+        </tbody>
+       {%endfor%}
+    </table>
+  </div>
+  </div>
+</body>
+</html>
+
+  

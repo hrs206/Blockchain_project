@@ -1,0 +1,227 @@
+/* ... (previously provided CSS styles) ... */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
+    background-color: rgb(216, 216, 216);
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    width: 130px;
+    height: 39px;
+    margin-left: 30px;
+  }
+  
+  .navbar-buttons {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .navbar-button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-right: 30px;
+  }
+  
+  .navbar-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .heading {
+    color: #047BD5;
+    font-size: 38px;
+  }
+  
+  .content {
+    width: 96%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; 
+    text-align: center;
+  }
+
+  @keyframes moveStars {
+    0% {
+      transform: translateY(-1000px);
+    }
+    100% {
+      transform: translateY(0); /* Adjust the distance based on the desired effect */
+    }
+  }
+  
+  .supercoins-animation {
+    font-size: 40px;
+    animation: moveStars 3s linear infinite;
+    position: relative; /* Add this to allow absolute positioning of pseudo elements */
+  }
+  
+  .supercoins-animation::before,
+  .supercoins-animation::after {
+    content: "\25CF"; 
+    position: absolute;
+    top: -30px; /* Adjust the position */
+    left: 10px; /* Adjust the position */
+    font-size: 72px;
+    color: gold;
+    animation: moveStars 3s linear infinite reverse;
+    transform-origin: center;
+  }
+
+  .transaction-container {
+    margin: 20px auto;
+    max-width: 96%;
+  }
+  
+  .transaction-history {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .transaction-history h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 22px;
+  }
+  
+  .transaction-history table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .transaction-history th,
+  .transaction-history td {
+    border: 2px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .delete-button img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .transaction-history th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .transaction-history tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .transaction-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 98%;
+  }
+
+.transaction-history {
+  width: 65%;
+}
+
+.add-program-form {
+  width: 33%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.add-program-form h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.add-program-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-program-form label {
+  margin-top: 10px;
+}
+
+.add-program-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.add-button {
+  background-color: #047bd5;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #035191;
+}
+
+  /* ... (previously provided CSS styles) ... */
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #047bd5;
+  padding: 10px 20px;
+  color: yellow;
+}
+
+.welcome-text {
+  margin-left: 30px;
+}
+
+.wallet-id {
+  margin-right: 30px;
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

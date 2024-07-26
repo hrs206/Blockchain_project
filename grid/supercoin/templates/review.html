@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Review</title>
+  <link rel="stylesheet" href="{% static 'review.css' %}">
+  <script src="{% static 'review.js' %}" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="{% static 'logo.png' %}" class="logo" alt="Logo">
+        <div class="navbar-buttons">
+          <button class="navbar-button">Wallet</button>
+          <button class="navbar-button">Rewards</button>
+          <button class="navbar-button">Store</button>
+        </div>
+      </nav>
+      <div class="emoji-review">
+        <h3 class="heading">Emoji Review:</h3>
+        <div class="emoji-options">
+          <span class="emoji-option" data-emoji="&#128545">&#128545</span>
+          <span class="emoji-option" data-emoji="&#128544">&#128544</span>
+          <span class="emoji-option" data-emoji="&#128528">&#128528</span>
+          <span class="emoji-option" data-emoji="&#128578">&#128578</span>
+          <span class="emoji-option" data-emoji="&#128512">&#128512</span>
+        </div>
+      </div>
+  <div class="container">
+    <h3 class="heading">Product Review:</h3>
+    <div class="review-box">
+      <textarea id="reviewText" maxlength="255" placeholder="Write your review..."></textarea>
+      <button id="postReviewButton">Post</button>
+    </div>
+  </div>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="popup-message">Congratulations! You have earned 2 Supercoins &#128526</span>
+      <button id="closePopupButton">Close</button>
+    </div>
+  </div>
+</body>
+</html>

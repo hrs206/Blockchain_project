@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SignUp Page</title>
+  <link rel="stylesheet" href="{% static 'signup.css' %}">
+  <script src="{% static 'signup.js' %}" defer></script>
+</head>
+<body>
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message:</strong> {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+  </div>
+  {% endfor %}
+  <div class="login-container">
+    <div class="login-card">
+        <img src="{% static 'logo.png' %}" class="login-logo" alt="Logo">
+        <h1 class="login-title">Sign Up</h1>
+      
+        <form method="post" action="/signup">
+          {% csrf_token %}
+          <div class="input-container">
+            <label for="email">Name:</label>
+            <input type="text" id="name" name="name" class="login-input" placeholder="Enter Name">
+          </div>
+          <div class="input-container">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" class="login-input" placeholder="email@example.com">
+          </div>
+          <div class="input-container">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="login-input" placeholder="Set Password">
+          </div>
+          <div class="input-container">
+            <label for="category">Choose account type:</label>
+            <select name="category" id="category">
+              <option value="customer">customer</option>
+              <option value="seller">seller</option>
+              <option value="admin">admin</option>
+            </select>
+          </div>
+          <button type="submit" class="login-button">Sign Up</button>
+          <a href="/login" class="hyper-link">Have an account already? Log in here.</a>
+      </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wallet Page - Seller</title>
+  <link rel="stylesheet" href="{% static 'seller.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+    <img src="{% static 'logo.png' %}" class="logo" alt="Logo">
+    <div class="navbar-buttons">
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="/seller">Wallet</a></button>
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="seller/rewards">Rewards</a></button>
+    </div>
+  </nav>
+
+  <div class="top-navbar">
+    <div class="welcome-text">Hi {{ name }}, Welcome to the Wallet Section!</div>
+    <div class="wallet-id"></div>
+  </div>
+
+
+  <div class="content">
+    <h1 class="heading">Total Balance:</h1>
+    <p><span id="supercoins" class="supercoins-animation">{{ balance }} Supercoins</span> left</p>
+    <form class="send-transfer-form" method="post" action="/seller">
+      {% csrf_token %}
+      <div class="input-group">
+        <label for="seller-id">Email:</label>
+        <input type="text" id="seller-id" name="email" class="wallet-id-input" placeholder="Enter example@mail.com">
+      </div>
+      <div class="input-group">
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" class="wallet-id-input" placeholder="in Supercoins">
+      </div>
+      <button type="submit" class="send-button">Send</button>
+    </form>
+  </div>
+  
+  
+  <div class="transaction-container">
+    <div class="transaction-history">
+      <h3>Transaction History:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Sender</th>
+            <th>Recipient</th>
+            <th>Date and Time</th>
+            <th>Supercoins</th>
+          </tr>
+        </thead>
+        {% for txn in txns%}
+        <tbody>
+          <tr>
+            <td>{{ txn.sender.email }}</td>
+            <td>{{ txn.recipient }}</td>
+            <td>{{ txn.date_time }}</td>
+            <td>{{ txn.amount }}</td>
+          </tr>
+        </tbody>
+       {%endfor%}
+    </table>
+  </div>
+  </div>
+</body>
+</html>
+
+  

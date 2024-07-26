@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rewards</title>
+  <link rel="stylesheet" href="{% static 'rewards.css' %}">
+  <script src="{% static 'rewards.js' %}" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <img src="{% static 'logo.png' %}" class="logo" alt="Logo">
+    <div class="navbar-buttons">
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="/customer">Wallet</a></button>
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="rewards">Rewards</a></button>
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="store">Store</a></button>
+    </div>
+  </nav>
+  <div class="content">
+    <h1 class="heading">Welcome to Rewards Section!</h1>
+  </div>
+  <div class="running-text-container">
+    <p class="running-text">Hurry! Offers available till 3 weeks from now only!</p>
+  </div>
+  <div class="your-rewards">
+    <h3>Your Rewards:</h3>
+    <div class="reward-list">
+      <div class="reward-item">
+        <img src="{% static 'zara.png' %}" alt="Reward 1" class="reward-image">
+        <p class="reward-description">Product A<br><br>Redeem for 50 Supercoins</p>
+        <div class="buy-now-button-container">
+          <button class="buy-now-button"><a href="rewards/zara">Buy Now</a></button>
+        </div>
+      </div>
+      <div class="reward-item">
+        <img src="{% static 'handm.png' %}" alt="Reward 2" class="reward-image">
+        <p class="reward-description">Product B<br><br>Redeem for 30 Supercoins</p>
+        <div class="buy-now-button-container">
+          <button class="buy-now-button">Buy Now</button>
+        </div>
+      </div>
+      <div class="reward-item">
+        <img src="{% static 'nike.png' %}" alt="Reward 3" class="reward-image">
+        <p class="reward-description">Product C<br><br>Redeem for 20 Supercoins</p>
+        <div class="buy-now-button-container">
+          <button class="buy-now-button">Buy Now</button>
+        </div>
+      </div>
+      <div class="reward-item">
+        <img src="{% static 'gap.png' %}" alt="Reward 4" class="reward-image">
+        <p class="reward-description">Product D<br><br>Redeem for 20 Supercoins</p>
+        <div class="buy-now-button-container">
+          <button class="buy-now-button">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reward-list">
+      <div class="reward-item">
+        <img src="{% static 'jbl.png' %}" alt="Reward 5" class="reward-image">
+        <p class="reward-description">Product E<br><br>Redeem for 15 Supercoins</p>
+        <div class="buy-now-button-container">
+          <button class="buy-now-button">Buy Now</button>
+        </div>
+      </div>
+      <div class="reward-item">
+        <img src="{% static 'hotwheels.png' %}" alt="Reward 6" class="reward-image">
+        <p class="reward-description">Product F<br><br>Redeem for 8 Supercoins</p>
+        <div class="buy-now-button-container">
+          <button class="buy-now-button">Buy Now</button>
+        </div>
+      </div>
+      <div class="reward-item">
+        <img src="{% static 'canon.png' %}" alt="Reward 7" class="reward-image">
+        <p class="reward-description">Product G<br><br>Redeem for 20 Supercoins</p>
+        <div class="buy-now-button-container">
+          <button class="buy-now-button">Buy Now</button>
+        </div>
+      </div>
+      <div class="reward-item">
+        <img src="{% static 'adidas.png' %}" alt="Reward 8" class="reward-image">
+        <p class="reward-description">Product H<br><br>Redeem for 20 Supercoins</p>
+        <div class="buy-now-button-container">
+          <button class="buy-now-button">Buy Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

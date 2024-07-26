@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+  <script src="{% static 'login.js' %}" defer></script>
+</head>
+<body>
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message:</strong> {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+{% endfor %}
+  <div class="login-container">
+    <div class="login-card">
+        <img src="{% static 'logo.png' %}" class="login-logo" alt="Logo">
+        <h1 class="login-title">Login</h1>
+        <form method="post" action="/login">
+          {% csrf_token %}
+      <div class="input-container">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" class="login-input" placeholder="email@example.com">
+      </div>
+      <div class="input-container">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="login-input" placeholder="Password">
+      </div>
+      <button type="Submit" class="login-button">Login</button>
+      <a href="/signup" class="hyper-link">Don't have an account? Make one here.</a>
+    </div>
+  </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Store</title>
+  <link rel="stylesheet" href="{% static 'store.css' %}">
+  <script src="{% static 'store.js' %}" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <img src="{% static 'logo.png' %}" class="logo" alt="Logo">
+    <div class="navbar-buttons">
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="/customer">Wallet</a></button>
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="rewards">Rewards</a></button>
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="store">Store</a></button>
+    </div>
+  </nav>
+  <div class="content">
+    <h1 class="heading">Welcome to our store!</h1>
+  </div>
+      <div class="your-rewards">
+        <h3>Best of Electronics</h3>
+        
+        <div class="reward-list">
+          <div class="reward-item">
+            <img src="{% static 'headphone.png' %}" alt="Reward 1" class="reward-image">
+            <p class="reward-description">JBL Headphone<br>₹1099<br><br>Earn upto 50 Supercoins</p>
+            <div class="buy-now-button-container">
+              <button class="buy-now-button"><a style="color: inherit; text-decoration: none" href="review">Buy Now</a></button></button>
+            </div>
+          </div>
+          <div class="reward-item">
+            <img src="{% static 'printer.png' %}" alt="Reward 2" class="reward-image">
+            <p class="reward-description">HP Printer<br>₹3999<br><br>Earn upto 110 Supercoins</p>
+            <div class="buy-now-button-container">
+              <button class="buy-now-button">Buy Now</button>
+            </div>
+          </div>
+          <div class="reward-item">
+            <img src="{% static 'monitor.png' %}" alt="Reward 3" class="reward-image">
+            <p class="reward-description">Dell Monitor<br>₹9999<br><br>Earn upto 280 Supercoins</p>
+            <div class="buy-now-button-container">
+              <button class="buy-now-button">Buy Now</button>
+            </div>
+          </div>
+          <div class="reward-item">
+            <img src="{% static 'trimmer.png' %}" alt="Reward 4" class="reward-image">
+            <p class="reward-description">Philips Trimmer<br>₹999<br><br>Earn upto 40 Supercoins</p>
+            <div class="buy-now-button-container">
+              <button class="buy-now-button">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+        <div class="your-rewards">
+          <h3>Beauty, Food, Toys & more</h3>
+          
+          <div class="reward-list">
+            <div class="reward-item">
+              <img src="{% static 'cycle.png' %}" alt="Reward 1" class="reward-image">
+              <p class="reward-description">Hercules Geared Cycle<br>₹3999<br><br>Earn upto 175 Supercoins</p>
+              <div class="buy-now-button-container">
+                <button class="buy-now-button">Buy Now</button>
+              </div>
+            </div>
+            <div class="reward-item">
+              <img src="{% static 'helmet.png' %}" alt="Reward 2" class="reward-image">
+              <p class="reward-description">Steelbird Helmet<br>₹1999<br><br>Earn upto 90 Supercoins</p>
+              <div class="buy-now-button-container">
+                <button class="buy-now-button">Buy Now</button>
+              </div>
+            </div>
+            <div class="reward-item">
+              <img src="{% static 'keyboard.png' %}" alt="Reward 3" class="reward-image">
+              <p class="reward-description">Casio Keyboard<br>₹9999<br><br>Earn upto 260 Supercoins</p>
+              <div class="buy-now-button-container">
+                <button class="buy-now-button">Buy Now</button>
+              </div>
+            </div>
+            <div class="reward-item">
+              <img src="{% static 'treadmill.png' %}" alt="Reward 4" class="reward-image">
+              <p class="reward-description">Fitkit Treadmill<br>₹18999<br><br>Earn upto 600 Supercoins</p>
+              <div class="buy-now-button-container">
+                <button class="buy-now-button">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+</body>
+</html>

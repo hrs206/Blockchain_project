@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Wallet Page</title>
+  <link rel="stylesheet" href="{% static 'admin.css' %}">
+</head>
+<body>
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>Message:</strong> {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+  </div>
+  {% endfor %}
+  <nav class="navbar">
+    <img src="{% static 'logo.png' %}" class="logo" alt="Logo">
+    <div class="navbar-buttons">
+      <button class="navbar-button"><a style="color: inherit; text-decoration: none" href="admin">Wallet</a></button>
+    </div>
+  </nav>
+
+  <div class="top-navbar">
+    <div class="welcome-text">Hi, {{ name }}</div>
+    <div class="wallet-id">Your Wallet ID: {{ wid }} Wallet Balance: {{ wb }} MATIC</div>
+  </div>
+
+  <div class="page-container">
+    <div class="sidebar">
+      <h1 class="sidebar-heading">Total Coins Issued:</h1>
+      <p><span id="totalCoins" class="total-coins">{{ total }} Supercoins</span></p>
+      <form class="send-transfer-form" method="post" action="/admin">
+        {% csrf_token %}
+
+        <div class="input-group">
+          <label for="amount">Amount:</label>
+          <input type="text" id="amount" name="iamount" class="wallet-id-input" placeholder="in Supercoins">
+        </div>
+        <button type="submit" class="send-button">Issue</button>
+      </form>
+    </div>
+    <div class="content">
+      <h1 class="heading">Total Balance:</h1>
+      <p><span id="supercoins" class="supercoins-animation">{{ balance }} Supercoins</span> left</p>
+      <form class="send-transfer-form" method="post" action="/admin">
+        {% csrf_token %}
+        <div class="input-group">
+          <label for="seller-id">Email ID: </label>
+          <input type="text" id="seller-id" name="email" class="wallet-id-input" placeholder="Enter example@mail.com">
+        </div>
+        <div class="input-group">
+          <label for="amount">Amount:</label>
+          <input type="text" id="amount" name="amount" class="wallet-id-input" placeholder="in Supercoins">
+        </div>
+        <button type="submit" class="send-button">Send</button>
+      </form>
+    </div>
+  </div>
+  
+  
+  <div class="transaction-container">
+    <div class="transaction-history">
+      <h3>Transaction History:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Sender</th>
+            <th>Recipient</th>
+            <th>Date and Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        {% for txn in txns %}
+        <tbody>
+          <tr>
+            <td>{{ txn.sender.email }}</td>
+            <td>{{ txn.recipient }}</td>
+            <td>{{ txn.date_time }}</td>
+            <td>{{ txn.amount }}</td>
+          </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+  </div>
+  </div>
+</body>
+</html>
+
+  
